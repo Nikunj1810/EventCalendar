@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calendar Event Management System
 
-## Getting Started
+A modern calendar application built with Next.js, TypeScript, Prisma, and PostgreSQL. Features include event creation, editing, deletion, and recurring event support.
 
-First, run the development server:
+## Features
+
+- 📅 Interactive calendar view
+- ➕ Create, edit, and delete events
+- 🔄 Recurring events support (daily, weekly, monthly)
+- 📱 Responsive design with Tailwind CSS
+- 🗄️ PostgreSQL database with Prisma ORM
+- ⚡ Server-side rendering with Next.js 14
+- 🎨 Modern UI with TypeScript
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React 19, TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: PostgreSQL
+- **ORM**: Prisma
+- **Deployment**: Vercel (recommended)
+
+## Prerequisites
+
+Before running this project, make sure you have:
+
+- Node.js 18+ installed
+- PostgreSQL database (local or cloud)
+- npm or yarn package manager
+
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd demo_nextjs
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Environment Setup
+
+Create a `.env` file in the root directory and add your database connection string:
+
+```bash
+cp .env.example .env
+```
+
+Update the `.env` file with your PostgreSQL connection details:
+
+```env
+DATABASE_URL="postgresql://username:password@localhost:5432/database_name"
+```
+
+### 4. Database Setup
+
+Generate Prisma client and run migrations:
+
+```bash
+# Generate Prisma client
+npm run prisma:generate
+
+# Run database migrations
+npm run prisma:migrate
+
+# Alternative: Push schema to database
+npm run prisma:push
+```
+
+### 5. Run the Development Server
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run prisma:generate` - Generate Prisma client
+- `npm run prisma:migrate` - Run database migrations
+- `npm run prisma:push` - Push schema to database
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/
+│   ├── api/events/          # API routes for events
+│   ├── events/              # Event pages
+│   │   ├── new/            # Create new event
+│   │   └── [id]/           # Edit event
+│   ├── globals.css         # Global styles
+│   ├── layout.tsx          # Root layout
+│   └── page.tsx            # Home page (calendar)
+├── lib/                    # Utility functions
+└── types/                  # TypeScript type definitions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+prisma/
+├── migrations/             # Database migrations
+└── schema.prisma          # Database schema
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Database Schema
 
-## Deploy on Vercel
+The application uses a single `Event` model with the following fields:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `id` - Unique identifier
+- `title` - Event title
+- `description` - Optional event description
+- `startDate` - Event start date and time
+- `endDate` - Event end date and time
+- `isRecurring` - Boolean for recurring events
+- `frequency` - Recurrence frequency (daily, weekly, monthly)
+- `daysOfWeek` - Days of week for weekly recurring events
+- `createdAt` - Creation timestamp
+- `updatedAt` - Last update timestamp
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## API Endpoints
+
+- `GET /api/events` - Fetch all events
+- `POST /api/events` - Create new event
+- `GET /api/events/[id]` - Get specific event
+- `PUT /api/events/[id]` - Update event
+- `DELETE /api/events/[id]` - Delete event
+
+## Screenshots
+
+### Calendar View
+![Calendar View](screenshots/calendar-view.png)
+
+### Event Creation Form
+![Event Form](screenshots/event-form.png)
+
+### Event Details
+![Event Details](screenshots/event-details.png)
+
+## Deployment
+
+### Deploy on Vercel
+
+1. Push your code to GitHub
+2. Connect your repository to [Vercel](https://vercel.com)
+3. Add your `DATABASE_URL` environment variable in Vercel dashboard
+4. Deploy automatically
+
+### Manual Deployment
+
+```bash
+npm run build
+npm run start
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Run tests and linting
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
